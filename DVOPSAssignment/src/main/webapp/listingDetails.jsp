@@ -23,18 +23,29 @@
 			<li><a
 				href="<%=request.getContextPath()%>/ListingServlet/viewListings"
 				class="nav-link">Back</a></li>
+				
+			<!-- Update Button -->
+			<li><a
+				href="edit?listingId=<c:out value='${listing.listingId}'/>" class="nav-link font-weight-bold text-uppercase text-primary">Edit</a>
+			</li>
+			<li>
+			<a href="delete?listingId=<c:out value='${listing.listingId}' />" class="nav-link font-weight-bold text-uppercase text-danger">Delete</a></td>
+			</li>
 		</ul>
 	</nav>
 
+   
 	<div class="container col-md-12">
 		<div class="card">
 			<div class="card-body">	
 			<div class="text-center">
 					<h3>Name: <c:out value='${listing.listingName}'/></h1>
-					<h4>Price (per time):<c:out value='${listing.listingPrice}' /></h3>
+					<h4>Price (per time):$<c:out value='${listing.listingPrice}' /></h3>
 					<h4>Country of origin: <c:out value='${listing.listingCountry}' /></h3>
 					<p>Remarks: <c:out value='${listing.listingRemarks}' /></p>	
-					<img class="rounded" src="${listing.listingImage}" >
+					<div class = "text-center">
+					<img class="rounded mx-auto d-block col-md-6 row" src="${listing.listingImage}" >
+					</div>
 				</div>
 			</div>
 			<div class="text-center">

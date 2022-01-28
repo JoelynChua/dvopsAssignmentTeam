@@ -1,6 +1,8 @@
 
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,8 +36,8 @@ public class ListingServlet extends HttpServlet {
 	private static final String SELECT_LISTING_BY_ID = "select listingId, listingName, listingPrice, listingCountry, listingRemarks, listingImage, userId from proxylisting where listingId =?";
 	private static final String SELECT_ALL_LISTING = "select * from proxylisting ";
 	private static final String DELETE_LISTING_SQL = "delete from ProxyListing where listingId = ?;";
-	private static final String UPDATE_LISTING_SQL = "update ProxyListing set listingId = ?, listingName= ?, listingPrice =?, listingCountry =?, listingRemarks =?, listingImage =?, userId =? where listingId = ?;";
-       
+	//private static final String UPDATE_LISTING_SQL = "update proxylisting set listingId = ?, listingName= ?, listingPrice =?, listingCountry =?, listingRemarks =?, listingImage =?, userId =? where listingId = ?;";
+	private static final String UPDATE_LISTING_SQL = "update proxylisting set listingName = ?, listingPrice =?, listingCountry = ?,listingRemarks =?,listingImage =? where listingId = ?;";
 	
 	//Step 3: Implement the getConnection method which facilitates connection to the database via JDBC
 	protected Connection getConnection() {
@@ -69,12 +71,15 @@ public class ListingServlet extends HttpServlet {
 		String action = request.getServletPath();
 		try {
 			switch (action) {
-//			case "/ListingServlet/delete":
-//				break;
-//			case "/ListingServlet/edit":
-//				break;
-//			case "/ListingServlet/update":
-//				break;	
+			case "/ListingServlet/delete":
+				deleteListing(request, response);
+				break;
+			case "/ListingServlet/edit":
+				showEditForm(request, response);
+				break;
+			case "/ListingServlet/update":
+				updateListing(request, response);
+				break;	
 			case "/ListingServlet/viewListings":
 				viewAllListing(request, response);
 				break;
@@ -156,6 +161,95 @@ public class ListingServlet extends HttpServlet {
 		request.setAttribute("listing", currentListing);
 		request.getRequestDispatcher("/listingDetails.jsp").forward(request, response);
 	}
+	
+	//edit form
+	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, ServletException, IOException {
+		// get parameter passed in the URL
+		String listingId = request.getParameter("listingId");
+		Listing currentListing = new Listing("", "", "", "", "", "", "");
+
+		try (Connection connection = getConnection();
+				// Step 2:Create a statement using connection object
+				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_LISTING_BY_ID);) {
+			    preparedStatement.setString(1, listingId);
+
+			// Step 3: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+			
+			// Step 4: Process the ResultSet object
+			while (rs.next()) {
+				listingId = rs.getString("listingId");
+				String listingName = rs.getString("listingName");
+				String listingPrice = rs.getString("listingPrice");
+				String listingCountry = rs.getString("listingCountry");
+				String listingRemarks = rs.getString("listingRemarks");
+				String listingImage = rs.getString("listingImage");
+				String userId = rs.getString("userId");
+				currentListing = new Listing(listingId, listingName, listingPrice, listingCountry,
+						listingRemarks, listingImage, userId);
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		// Step 5: Set existingUser to request and serve up the userEdit form
+		request.setAttribute("listing", currentListing);
+		request.getRequestDispatcher("/editListing.jsp").forward(request, response);
+	}
+	
+	//Update listing
+	private void updateListing(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+		// Step 1: Retrieve value from the request
+		//String oriId = request.getParameter("oriId");
+		//String oriListingName = request.getParameter("oriListingName");
+		String orilistingId = request.getParameter("orilistingId");
+		String listingName = request.getParameter("listingName");
+		String listingPrice = request.getParameter("listingPrice");
+		String listingCountry = request.getParameter("listingCountry");
+		String listingRemarks = request.getParameter("listingRemarks");
+		String listingImage = request.getParameter("listingImage");
+		//String userId = request.getParameter("userId");;
+		// System.out.println (listingCountry); //takes in input
+		
+
+		// Step 2: Attempt connection with database and execute update user SQL query
+		try (Connection connection = getConnection();
+				PreparedStatement statement = connection.prepareStatement(UPDATE_LISTING_SQL);) {
+					//statement.setString(1, orilistingId);
+			        //Impt: Order of the statement matter
+					statement.setString(1, listingName);
+					statement.setString(2, listingPrice);
+					statement.setString(3, listingCountry);
+					statement.setString(4, listingRemarks);
+					statement.setString(5, listingImage);
+					statement.setString(6, orilistingId);
+					//statement.setString(7, userId);
+					//statement.setString(7, oriListingName);
+					int i = statement.executeUpdate();
+					//System.out.println (statement);
+					//System.out.println (i);
+		}
+
+		// Step 3: redirect back to UserServlet (note: remember to change the url to your project name)
+		response.sendRedirect("http://localhost:8090/DVOPSAssignment/ListingServlet/viewListings");
+	}
+	
+	//delete
+	private void deleteListing(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException {
+			//Step 1: Retrieve value from the request
+		    String listingId = request.getParameter("listingId");;
+			 //Step 2: Attempt connection with database and execute delete user SQL query
+			 try (Connection connection = getConnection(); PreparedStatement statement =
+			connection.prepareStatement(DELETE_LISTING_SQL);) {
+			 statement.setString(1, listingId);
+			 int i = statement.executeUpdate();
+			 }
+			 //Step 3: redirect back to UserServlet dashboard (note: remember to change the url to your project name)
+			 response.sendRedirect("http://localhost:8090/DVOPSAssignment/ListingServlet/viewListings");
+			}
+	
+	
 
 	
 	
