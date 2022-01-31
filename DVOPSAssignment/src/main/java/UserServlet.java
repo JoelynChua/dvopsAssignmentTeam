@@ -1,6 +1,7 @@
 
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -65,12 +66,9 @@ public class UserServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		/*
-		String get_userId = (String) session.getAttribute("user_id");
-		String test = "username";
-		System.out.println(get_userId);
-		request.setAttribute("user", test);
-		System.out.println(test); */
+		
+
+	
 		
 		//System.out.println(request.getPathTranslated());
 		
@@ -82,6 +80,18 @@ public class UserServlet extends HttpServlet {
 				   break;
 			   case "/user/update":
 				   updateUser(request,response);
+				   break;
+			   case "/user/reviews":
+				   testFunction(request,response);
+				   break;
+			   case "/user/listings":
+				   
+				   break;
+			   case "/user/bookings":
+				   
+				   break;
+			   case "/user/logout":
+				   doLogout(request,response);
 				   break;
 			   }
 		   } catch(SQLException ex) {
@@ -164,9 +174,22 @@ public class UserServlet extends HttpServlet {
 	}
 	
 	
-	private void doLogout() {
+	private void doLogout(HttpServletRequest request, HttpServletResponse response) {
 		
+		request.getSession().removeAttribute("user_id");
 		
+		System.out.println("doLogout");
+		
+	}
+	
+	private void testFunction(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		PrintWriter writer = response.getWriter();
+		
+		writer.println("<h1>" +"Successful!" +"<h1>");
+		writer.close();	
+			
+		 
 	}
 	
 	

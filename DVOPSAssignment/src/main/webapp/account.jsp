@@ -8,15 +8,15 @@
 <head>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <title>Welcome Page</title>
- <link rel="stylesheet"
-href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="css/account.css"/>
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
+<link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
 </head>
 
 <body>
@@ -24,77 +24,47 @@ crossorigin="anonymous">
 
 
 <div class="container">
-   
 
-   
-     <div class="row">
-     
-    <div class="col">
-
+ <div class="profile-content">
+ 
+ <div class="profile-image">
+ <i class="fas fa-user"></i>
+ </div>
     <form action="user/update" method="post">
-  <div class="form-group">
+    <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" value="${currentUser.email}" name="email" aria-describedby="emailHelp" placeholder="Enter email">
     
-  </div>
-  <div class="form-group">
+    </div>
+    <div class="form-group">
     <label for="exampleInputPassword1">Username</label>
-    <input type="text" class="form-control" name="username" value="${currentUser.username}" placeholder="Password">
-  </div>
-  <button type="submit" class="btn btn-primary" value="Call Servlet">Update</button>
+    <input type="text" size="50" class="form-control" name="username" value="${currentUser.username}" placeholder="username">
+    </div>
+    <button type="submit" class="btn btn-primary" value="Call Servlet">Update</button>
 </form>
-    
-
-  
-  
-    </div>
-    
-    <div class="col-sm">
-
-    <div class="profile-content">
-    
-        <ul>
-        <li><a class="active">Your Listings</a></li>
-        <li><a >Your Reviews</a></li>
-       </ul>
-       
-      
-    <div class="ex3">
-    
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-    <p> Test </p>
-
-    
-    </div>
-    </div>
-
-    
    </div>
-   
-   </div>
+     
+     
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Your Listings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Your Reviews</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Your Bookings</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 </div>
 </body>
 <!--   

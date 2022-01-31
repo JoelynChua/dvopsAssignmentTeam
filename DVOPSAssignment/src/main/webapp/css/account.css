@@ -1,74 +1,44 @@
 
-
+.nav-item {
+	font-style:bold;
+	color:black;
+}
 
 .container {
-	margin-top:5%;
+	
+	margin-top:1%;
 	text-align: center;
 	height:10px;
 	
 }
 
 
-input {
-	width: 50px;
-	text-align:center;
-}
-
 .profile-box {
-  background: #e2e1e0;
   margin-right:3px;
   border-radius: 2px;
   display: inline-block;
   height: 300px;
   margin: 1rem;
   position: relative;
-  width: 250px;
+  width: 200px;
 }
 
 .profile-content {
 	
-  background: #e2e1e0;
+  text-align: center;
   border-radius: 2px;
   display: inline-block;
   height: 400px;
-  margin-left:-20%;
-  position: absolute;
-  width: 700px;
-}
-
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
+  width: 400px;
   
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+  border: 4px black;
+  border-bottom-style: solid;
 }
 
-li a:hover {
-	
-  cursor: pointer;
+.profile-image {
+	font-size: 90px;
 }
 
-div.ex3 {
-  background: #e2e1e0;
-  text-align: left;
-
-  height:400px;
-  overflow: auto;
-}
 
 
 
