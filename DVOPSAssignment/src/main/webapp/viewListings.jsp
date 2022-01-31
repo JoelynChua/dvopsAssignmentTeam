@@ -21,6 +21,14 @@
 		<div class="container">
 			<h3 class="text-center">All Listings</h3>
 			<br>
+			<form action="UserServlet" method="post">
+					Sort By: 
+					<select name="forma" onchange="location = this.value;">
+						<option value="">Price</option>
+						<option value="#">Price asc</option> 
+					</select>
+				</form>
+				<br>
 
 <div class="card-deck">
 			<c:forEach var="listing" items="${viewAllListing}">

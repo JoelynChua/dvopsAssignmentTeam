@@ -39,6 +39,10 @@ public class ListingServlet extends HttpServlet {
 	//private static final String UPDATE_LISTING_SQL = "update proxylisting set listingId = ?, listingName= ?, listingPrice =?, listingCountry =?, listingRemarks =?, listingImage =?, userId =? where listingId = ?;";
 	private static final String UPDATE_LISTING_SQL = "update proxylisting set listingName = ?, listingPrice =?, listingCountry = ?,listingRemarks =?,listingImage =? where listingId = ?;";
 	
+	
+	 //sort
+    // private static final String SORT_LISTING_SQL = "select * from proxylisting order by listingPrice";
+    
 	//Step 3: Implement the getConnection method which facilitates connection to the database via JDBC
 	protected Connection getConnection() {
 		Connection connection = null;
@@ -248,6 +252,8 @@ public class ListingServlet extends HttpServlet {
 			 //Step 3: redirect back to UserServlet dashboard (note: remember to change the url to your project name)
 			 response.sendRedirect("http://localhost:8090/DVOPSAssignment/ListingServlet/viewListings");
 			}
+	
+		
 	
 	
 
