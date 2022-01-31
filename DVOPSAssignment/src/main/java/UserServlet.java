@@ -1,23 +1,55 @@
 
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+import com.cruds.model.*;
 /**
  * Servlet implementation class UserServlet
  */
 @WebServlet("/user")
 public class UserServlet extends HttpServlet {
 
+	
+	
+	
 	private static final long serialVersionUID = 1L;
-		
+	private String jdbcURL = "jdbc:mysql://localhost:3306/userdetails";
+	private String jdbcUsername = "root";
+	private String jdbcPassword = "password";
+	
+	
+	private static final String UPDATE_USER = "update users set username = ?, email = ? where ?;";
+	private static final String GET_USER = "SELECT * FROM users WHERE ?;";
+	
+	
+	
+	protected Connection getConnection() {
+		 Connection connection = null;
+		 try {
+		 Class.forName("com.mysql.jdbc.Driver");
+		 connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
+		 } catch (SQLException e) {
+		 e.printStackTrace();
+		 } catch (ClassNotFoundException e) {
+		 e.printStackTrace();
+		 }
+		 return connection;
+		 
+		 
+		 
+		 }
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,12 +65,30 @@ public class UserServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		
+		/*
 		String get_userId = (String) session.getAttribute("user_id");
+		String test = "username";
 		System.out.println(get_userId);
+		request.setAttribute("user", test);
+		System.out.println(test); */
 		
+		//System.out.println(request.getPathTranslated());
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String action = request.getServletPath();
+		   try {
+			   switch(action) {
+			   case "/user":
+				   showUser(request,response);
+				   break;
+			   case "/user/update":
+				   updateUser(request,response);
+				   break;
+			   }
+		   } catch(SQLException ex) {
+			   throw new ServletException(ex);
+		   }
+		//request.getRequestDispatcher("/account.jsp").forward(request, response);
+		response.getWriter().append("Served at: this  ").append(request.getContextPath());
 	}
 
 	/**
@@ -48,6 +98,78 @@ public class UserServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+	
+	
+	private void showUser(HttpServletRequest request, HttpServletResponse response)
+	        throws SQLException, ServletException, IOException {
+		
+		HttpSession session = request.getSession();
+		Integer user_id = (Integer) session.getAttribute("user_id");
+		
+		user currentUser = new user(0, "fail", "fail", "fail");
+		
+		try (Connection connection = getConnection(); PreparedStatement statement =
+				connection.prepareStatement(GET_USER);) {
+				
+				statement.setInt(1, user_id);
+				
+				ResultSet rs = statement.executeQuery();
+				
+				while(rs.next()) {
+					String username = rs.getString("username");
+					String email = rs.getString("email");
+					
+					currentUser = new user(0,username,email,"");
+					
+				}
+				
+			
+				
+		} catch (SQLException e) {
+			
+			System.out.println("error line 129");
+			System.out.println(e.getMessage());
+		}
+		System.out.println(currentUser);
+		
+		request.setAttribute("currentUser", currentUser);
+		request.getRequestDispatcher("/account.jsp").forward(request, response);
+		
+		
+	}
+	
+	private void updateUser(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException {
+		
+		String username = request.getParameter("username");
+		String email = request.getParameter("email");
+		HttpSession session = request.getSession();
+		System.out.println("function called updateUser");
+		//String get_userId = (String) session.getAttribute("user_id");
+		Integer user_id = (Integer) session.getAttribute("user_id");
+		System.out.println(user_id);
+		try (Connection connection = getConnection(); PreparedStatement statement =
+				connection.prepareStatement(UPDATE_USER);) {
+					
+				statement.setString(1, username);
+				statement.setString(2, email);
+				statement.setInt(3, user_id);
+				
+				statement.executeUpdate();
+				
+		}
+		response.sendRedirect("http://localhost:8080/DVOPSAssignment/user");
+	
+		
+	}
+	
+	
+	private void doLogout() {
+		
+		
+	}
+	
+	
 	
 
 
