@@ -13,3 +13,14 @@ reviewID(PK, AI) - int 50
 userID - int 50
 rating - int 1
 review - varchar 255
+
+DB name: userdetails
+table name: users
+
+fields for the users table:
+user_id(PK, AI)
+username
+email
+password
+
+
