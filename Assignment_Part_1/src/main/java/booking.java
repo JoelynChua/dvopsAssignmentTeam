@@ -1,5 +1,6 @@
 
 public class booking {
+	protected String name;
 	
 	public booking(String name, String card, String cvCode, String date, String phone, String location) {
 		super();
@@ -47,7 +48,7 @@ public class booking {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	 protected String name;
+
 	 protected String card;
 	 protected String cvCode;
 	 protected String date;
