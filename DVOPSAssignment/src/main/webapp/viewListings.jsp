@@ -25,7 +25,7 @@
 					Sort By: 
 					<select name="forma" onchange="location = this.value;">
 						<option value="">Price</option>
-						<option value="#">Price asc</option> 
+						<option value="<%=request.getContextPath()%>/ListingServlet/sortPrice">Price asc</option> 
 					</select>
 				</form>
 				<br>
