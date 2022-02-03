@@ -81,9 +81,9 @@ response.setContentType("text/html");
 			if(input_username.equals(name) && input_password.equals(password)){
 				
 
-				session.setAttribute("user_id", rs.getString("user_id"));	
-				String get_userId = (String) session.getAttribute("user_id");	
-			//	System.out.println(get_userId);
+				session.setAttribute("user_id", rs.getInt("user_id"));	
+				Integer get_userId = (Integer) session.getAttribute("user_id");	
+				System.out.println(get_userId);
 				
 				response.sendRedirect("http://localhost:8080/DVOPSAssignment/user");
 				
