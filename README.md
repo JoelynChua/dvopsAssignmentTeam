@@ -14,7 +14,7 @@ userID - int 50
 rating - int 1
 review - varchar 255
 #
-DB name: userdetails
+DB name: ecommerce
 table name: users
 
 fields for the users table:
