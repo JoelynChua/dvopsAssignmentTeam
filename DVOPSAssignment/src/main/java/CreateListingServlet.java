@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -32,6 +33,10 @@ public class CreateListingServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		//session storage
+		HttpSession session = request.getSession();
+		System.out.println (session);
 	}
 
 	/**
@@ -59,7 +64,7 @@ public class CreateListingServlet extends HttpServlet {
 		try {
 		 Class.forName("com.mysql.jdbc.Driver");
 		 Connection con = DriverManager.getConnection(
-		 "jdbc:mysql://localhost:3306/proxylisting", "root", "password");
+		 "jdbc:mysql://localhost:3306/ecommerce", "root", "password");
 		 
 		//Step 4: implement the sql query using prepared statement (https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html)
 		 PreparedStatement ps = con.prepareStatement("insert into PROXYLISTING values(?,?,?,?,?,?,?)");
