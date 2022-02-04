@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.8] - Sone (AdamantFluxx) 04/02/2022
+- Changed database name of "userdetails" to "ecommerce"
 
 ## [0.7] - Gerick (2002906B) 03/02/2022
 - Fixed web.xml as it was causing problems
