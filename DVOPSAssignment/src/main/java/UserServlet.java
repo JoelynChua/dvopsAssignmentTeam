@@ -26,7 +26,7 @@ public class UserServlet extends HttpServlet {
 	
 	
 	private static final long serialVersionUID = 1L;
-	private String jdbcURL = "jdbc:mysql://localhost:3306/userdetails";
+	private String jdbcURL = "jdbc:mysql://localhost:3306/ecommerce";
 	private String jdbcUsername = "root";
 	private String jdbcPassword = "password";
 	
