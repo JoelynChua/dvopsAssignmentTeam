@@ -24,6 +24,7 @@
 		<url-pattern>/ListingServlet/edit</url-pattern>
 		<url-pattern>/ListingServlet/update</url-pattern>
 		<url-pattern>/ListingServlet/delete</url-pattern>
+		<url-pattern>/ListingServlet/sortPrice</url-pattern>
 	</servlet-mapping>
 
 	<servlet>

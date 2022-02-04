@@ -41,7 +41,7 @@ public class ListingServlet extends HttpServlet {
 	
 	
 	 //sort
-    // private static final String SORT_LISTING_SQL = "select * from proxylisting order by listingPrice";
+     private static final String SORT_LISTING_SQL = "select * from proxylisting order by listingPrice";
     
 	//Step 3: Implement the getConnection method which facilitates connection to the database via JDBC
 	protected Connection getConnection() {
@@ -89,6 +89,9 @@ public class ListingServlet extends HttpServlet {
 				break;
 			case "/ListingServlet/details":
 				showListingDetails(request, response);
+				break;
+			case "/ListingServlet/sortPrice":
+				listingPriceSorted(request, response);
 				break;
 			}
 		} catch (SQLException ex) {
@@ -252,6 +255,42 @@ public class ListingServlet extends HttpServlet {
 			 //Step 3: redirect back to UserServlet dashboard (note: remember to change the url to your project name)
 			 response.sendRedirect("http://localhost:8090/DVOPSAssignment/ListingServlet/viewListings");
 			}
+	
+	
+	 //sort Listing
+	//Step 5: viewAllListing function to connect to the database and retrieve all users records
+	private void listingPriceSorted(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+		List<Listing> listings = new ArrayList<>();
+		try (Connection connection = getConnection();
+				// Step 5.1: Create a statement using connection object
+				PreparedStatement preparedStatement = connection.prepareStatement(SORT_LISTING_SQL);) {
+
+			// Step 5.2: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+
+			// Step 5.3: Process the ResultSet object.
+			while (rs.next()) {
+				String listingId = rs.getString("listingId");
+				String listingName = rs.getString("listingName");
+				String listingPrice = rs.getString("listingPrice");
+				String listingCountry = rs.getString("listingCountry");
+				String listingRemarks = rs.getString("listingRemarks");
+				String listingImage = rs.getString("listingImage");
+				String userId = rs.getString("userId");
+				listings.add(new Listing(listingId, listingName, listingPrice, listingCountry, listingRemarks,
+						listingImage, userId));
+			}
+			
+			//System.out.println("Function");
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		// Step 5.4: Set the users list into the listUsers attribute to be pass to the userManagement.jsp
+		request.setAttribute("listingPriceSorted", listings);
+		request.getRequestDispatcher("/sortListing.jsp").forward(request, response);
+	}
+	
 	
 		
 	
