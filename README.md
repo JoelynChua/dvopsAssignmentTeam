@@ -47,14 +47,14 @@ DB name: ecommerce
 table name: proxylisting
 
 fields for the users table:
-listingId(PK, AI)
-listingName
-listingPrice
-listingCountry
-listingRemarks
-listingImage
-userId(FK)
-
+listingId(PK, AI) - int
+listingName - varchar 50
+listingPrice - decimal
+listingCountry - text
+listingRemarks - text
+listingImage - varchar (2048)
+userId(FK) - int
+#
 Navigate link: 
 login page: http://localhost:8080/DVOPSAssignment/login
 register page: http://localhost:8080/DVOPSAssignment/
@@ -62,10 +62,10 @@ profile page: http://localhost:8080/DVOPSAssignment/user -- ONLY CAN ACCESS WHEN
 
 create listing: http://localhost:8080/DVOPSAssignment/createListing.jsp
 view listing: http://localhost:8080/DVOPSAssignment/ListingServlet/viewListings 
+(update, delete and sort listing can be navigate from view listing page)
 
 view bookings: http://localhost:8080/DVOPSAssignment/BookingManagementServlet/dashboard
 create booking: http://localhost:8080/DVOPSAssignment/Booking.jsp
-(update, delete and sort listing can be navigate from view listing page)
 
 view reviews: http://localhost:8080/DVOPSAssignment/ReviewServlet/dashboard
 add review: http://localhost:8080/DVOPSAssignment/ReviewServlet/dashboard
