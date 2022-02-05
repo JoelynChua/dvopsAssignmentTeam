@@ -50,6 +50,7 @@
  <url-pattern>/user/reviews</url-pattern>
  <url-pattern>/user/listings</url-pattern>
  <url-pattern>/user/bookings</url-pattern>
+ <url-pattern>/user/logout</url-pattern>
  </servlet-mapping>
  
   <servlet>
