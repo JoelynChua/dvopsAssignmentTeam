@@ -1,7 +1,11 @@
 # Changelog
-## [0.9] - Sone (AdamantFluxx) 04/02/2022
+
+## [1.0] - Sone (AdamantFluxx) 06/02/2022
+- Added bookingCRUD from Kenneth Branch and removed Javascript items.
+
+## [0.9] - Sone (AdamantFluxx) 06/02/2022
 - Added user persistency for Review and Listing features
-- 
+
 ## [0.8] - Sone (AdamantFluxx) 04/02/2022
 - Changed database name of "userdetails" to "ecommerce"
 
