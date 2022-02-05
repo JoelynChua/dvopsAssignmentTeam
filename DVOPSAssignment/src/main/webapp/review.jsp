@@ -24,7 +24,7 @@
 		<div class="card">
 			<div class="card-body">
 <form action="AddReviewServlet" method="post"> 
-	UserID: <input type= "text" name="userID"><br>
+	UserID: <input type= "text" name="userID" value="${ user_id }" disabled><br>
 	Rating (1-5): <input type= "text" name="rating"><br>
 	Review: <input type= "text" name="review"><br>
 	<input type="submit" value="Add review"/>

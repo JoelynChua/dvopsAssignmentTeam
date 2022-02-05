@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-response.setContentType("text/html");
+    response.setContentType("text/html");
 		
 		PrintWriter out = response.getWriter();
 		
@@ -62,7 +62,7 @@ response.setContentType("text/html");
 			// This is database url, userdetails is the database NOT TABLE
 			Connection con = DriverManager.getConnection(
 					
-			 "jdbc:mysql://localhost:3306/userdetails", "root", "password");
+			 "jdbc:mysql://localhost:3306/ecommerce", "root", "password");
 			// SELECT FROM users, users is the table that exists in the userdetails database.
 			// Can change accordingly thanks
 			PreparedStatement ps = con.prepareStatement("SELECT *  FROM `users` WHERE `username` = ? ;");

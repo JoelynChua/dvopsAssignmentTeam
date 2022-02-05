@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class addReview
@@ -40,12 +41,14 @@ public class AddReviewServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		        HttpSession session = request.getSession();
 				response.setContentType("text/html"); // Step 1: Initialize a PrintWriter object to return the html values via
 														// the response
 				PrintWriter out = response.getWriter(); // Step 2: retrieve the four parameters from the request from the web
 														// form
 				String c = request.getParameter("reviewID");
-				String n = request.getParameter("userID");
+				Integer n = (Integer)session.getAttribute("user_id");
 				String p = request.getParameter("rating");
 				String e = request.getParameter("review");
 				// Step 3: attempt connection to database using JDBC, you can change the
@@ -60,7 +63,7 @@ public class AddReviewServlet extends HttpServlet {
 					// Step 5: parse in the data retrieved from the web form request into the
 					// prepared statement accordingly
 					ps.setString(1, c);
-					ps.setString(2, n);
+					ps.setInt(2, n);
 					ps.setString(3, p);
 					ps.setString(4, e); // Step 6: perform the query on the database using the prepared statement
 					int i = ps.executeUpdate(); // Step 7: check if the query had been successfully execute, return “You are
@@ -69,6 +72,7 @@ public class AddReviewServlet extends HttpServlet {
 						PrintWriter writer = response.getWriter();
 						writer.println("<h1>" + "Review Added!" + "</h1>");
 						writer.close();
+						System.out.println(" At Line AddReviewServlet.java Line 75. Review added with User id : " + (Integer)session.getAttribute("user_id") );
 					}
 				} // Step 8: catch and print out any exception
 				catch (Exception exception) {

@@ -70,7 +70,7 @@
 											<td align="right"><font
 												style="font-size: 15px; font-family: Arial, Times, serif; font-weight: bold">user ID:</font>
 											</td>
-											<td><input type="text" name="userId" size="50"></td>
+											<td><input type="text" name="userId" size="50" value="${ user_id }" disabled></td>
 										</tr>
 										
 									</table>
