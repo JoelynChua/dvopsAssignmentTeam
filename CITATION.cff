@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+
+authors:
+- family-names: "Aung"
+  given-names: "Pyae Sone"
+  git user: "AdamantFluxx"
+- family-names: "Chua"
+  given-names: "Joelyn, Wan Lin"
+  git user: "JoelynChua"
+- family-names: "Tan"
+  given-names: "Kenneth"
+  git user: "KennethTan101"
+- family-names: "Koh"
+  given-names: "Gerick"
+  git user: "2002906B"
+
+title: "dvopsAssignmentTeam"
+version: 1.0.0
+doi: 10.5281/zenodo.1234
+date-released: 2022-02-06
+url: "https://github.com/JoelynChua/dvopsAssignmentTeam"
