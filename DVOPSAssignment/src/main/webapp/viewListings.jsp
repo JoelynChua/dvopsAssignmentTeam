@@ -21,7 +21,13 @@
 		<div class="container">
 			<h3 class="text-center">All Listings</h3>
 			<br>
-			<form action="UserServlet" method="post">
+			<%@ include file="header.jsp" %>  
+			
+			<h2>Check</h2>
+			<a href="<%=request.getContextPath()%>/createListing.jsp"
+			class="btn btn-success">New listing</a>
+			<br><br>
+			<form method="post">
 					Sort By: 
 					<select name="forma" onchange="location = this.value;">
 						<option value="">Price</option>
