@@ -40,8 +40,12 @@
     <label for="exampleInputPassword1">Username</label>
     <input type="text" size="50" class="form-control" name="username" value="${currentUser.username}" placeholder="username">
     </div>
-    <button type="submit" class="btn btn-primary" value="Call Servlet">Update</button>
-</form>
+     <button type="submit" class="btn btn-primary" value="Call Servlet">Update</button>
+</form>  
+   <form action="user/logout" method="post">
+   <button style="margin-top: 2%;" type="submit" class="btn btn-danger" value="Call Servlet">Logout</button>
+   </form>
+
    </div>
      
      

@@ -174,11 +174,12 @@ public class UserServlet extends HttpServlet {
 	}
 	
 	
-	private void doLogout(HttpServletRequest request, HttpServletResponse response) {
+	private void doLogout(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		request.getSession().removeAttribute("user_id");
 		
 		System.out.println("doLogout");
+		response.sendRedirect("http://localhost:8080/DVOPSAssignment/login");
 		
 	}
 	
