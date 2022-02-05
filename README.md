@@ -52,9 +52,18 @@ listingImage
 userId(FK)
 
 Navigate link: 
-create listing: http://localhost:8090/DVOPSAssignment/createListing.jsp
-view listing: http://localhost:8090/DVOPSAssignment/ListingServlet/viewListings 
+login page: http://localhost:8080/DVOPSAssignment/login
+register page: http://localhost:8080/DVOPSAssignment/
+profile page: http://localhost:8080/DVOPSAssignment/user -- ONLY CAN ACCESS WHEN THE USER LOGS IN.
+
+create listing: http://localhost:8080/DVOPSAssignment/createListing.jsp
+view listing: http://localhost:8080/DVOPSAssignment/ListingServlet/viewListings 
+
+view bookings: http://localhost:8080/DVOPSAssignment/BookingManagementServlet/dashboard
+create booking: http://localhost:8080/DVOPSAssignment/Booking.jsp
 (update, delete and sort listing can be navigate from view listing page)
 
+view reviews: http://localhost:8080/DVOPSAssignment/ReviewServlet/dashboard
+add review: http://localhost:8080/DVOPSAssignment/ReviewServlet/dashboard
 
 
