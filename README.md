@@ -25,6 +25,19 @@ username
 email
 password
 #
+Author: Kenneth
+DB name: ecommerce
+table name: booking
+
+fields for the users table:
+name(PK)
+card
+cvCode
+date
+phone
+location 
+(will make a bookingId once he wakes up)
+#
 Author: Joelyn Chua
 DB name: ecommerce
 table name: proxylisting
