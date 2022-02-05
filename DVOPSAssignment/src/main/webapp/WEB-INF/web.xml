@@ -51,5 +51,18 @@
  <url-pattern>/user/listings</url-pattern>
  <url-pattern>/user/bookings</url-pattern>
  </servlet-mapping>
+ 
+  <servlet>
+ <servlet-name>BookingManagementServlet</servlet-name>
+ <servlet-class>BookingManagementServlet</servlet-class>
+ </servlet>
+
+ <servlet-mapping>
+ <servlet-name>BookingManagementServlet</servlet-name>
+ <url-pattern>/BookingManagementServlet/dashboard</url-pattern>
+ <url-pattern>/BookingManagementServlet/edit</url-pattern>
+ <url-pattern>/BookingManagementServlet/update</url-pattern>
+ <url-pattern>/BookingManagementServlet/delete</url-pattern>
+ </servlet-mapping>
   
 </web-app>
