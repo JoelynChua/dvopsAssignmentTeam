@@ -50,6 +50,7 @@ public class CreateListingServlet extends HttpServlet {
 		//Step 1: Initialize a PrintWriter object to return the html values via the response
 		PrintWriter out = response.getWriter();
 		
+		HttpSession session = request.getSession();
 		//Step 2: retrieve the four parameters from the request from the web form
 		String a = request.getParameter("listingId");
 		String n = request.getParameter("listingName");
@@ -57,7 +58,7 @@ public class CreateListingServlet extends HttpServlet {
 		String e = request.getParameter("listingCountry");
 		String c = request.getParameter("listingRemarks");
 		String v = request.getParameter("listingImage");
-		String k = request.getParameter("userId");
+		Integer k = (Integer) session.getAttribute("user_id");
 		
 		
 		//Step 3: attempt connection to database using JDBC, you can change the username and password accordingly using the phpMyAdmin > User Account dashboard
@@ -76,7 +77,7 @@ public class CreateListingServlet extends HttpServlet {
 		  ps.setString(4, e);
 		  ps.setString(5, c);
 		  ps.setString(6, v);
-		  ps.setString(7, k);
+		  ps.setInt(7, k);
 		  
 		//Step 6: perform the query on the database using the prepared statement
 		  int i = ps.executeUpdate();

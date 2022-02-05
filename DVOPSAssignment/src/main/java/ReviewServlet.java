@@ -63,6 +63,7 @@ public class ReviewServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		// TODO Auto-generated method stub
 		// Step 4: Depending on the request servlet path, determine the function to
 		// invoke using the follow switch statement.
