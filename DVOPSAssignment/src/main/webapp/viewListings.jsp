@@ -21,7 +21,7 @@
 	<div class="row">
 		<div class="container">
 			<h3 class="text-center">All Listings</h3>
-			<br>
+			<hr>
 			<%@ include file="header.jsp" %>  
 			
 			<a href="<%=request.getContextPath()%>/createListing.jsp"

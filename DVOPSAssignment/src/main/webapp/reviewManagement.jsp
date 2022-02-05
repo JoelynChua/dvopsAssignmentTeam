@@ -13,6 +13,7 @@
 		<div class="container">
 			<h3 class="text-center">List of Reviews</h3>
 			<hr>
+			<%@ include file="header.jsp" %>
 			<div class="container text-left">
 				<!-- Add new review button redirects to the register.jsp page -->
 				<a href="<%=request.getContextPath()%>/review.jsp"

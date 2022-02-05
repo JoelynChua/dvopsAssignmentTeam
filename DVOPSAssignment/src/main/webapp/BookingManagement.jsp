@@ -16,6 +16,7 @@
 		<div class="container">
 			<h3 class="text-center">List of Bookings</h3>
 			<hr>
+			<%@ include file="header.jsp" %>
 			<div class="container text-left">
 				<!-- Add new booking button redirects to the booking.jsp page -->
 				<a href="<%=request.getContextPath()%>/Booking.jsp"
