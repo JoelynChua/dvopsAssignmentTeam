@@ -2,8 +2,12 @@
 
 Working CRUD for reviews.
 
-Change line 56 in "AddReviewServlet.java" to own localhost.
-Change line 25 in ReviewServlet.java" to own localhost.
+Basic environment setup:
+Tomcat Server port is 8080,
+phpMyAdmin port is 3306.
+everyone is using database named ecommerce.
+
+
 #
 Author: Koh Gerick
 DB name: ecommerce
