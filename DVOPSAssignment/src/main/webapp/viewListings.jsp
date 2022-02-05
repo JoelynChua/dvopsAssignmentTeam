@@ -17,13 +17,13 @@
 	
 </head>
 <body>
+
 	<div class="row">
 		<div class="container">
 			<h3 class="text-center">All Listings</h3>
 			<br>
 			<%@ include file="header.jsp" %>  
 			
-			<h2>Check</h2>
 			<a href="<%=request.getContextPath()%>/createListing.jsp"
 			class="btn btn-success">New listing</a>
 			<br><br>

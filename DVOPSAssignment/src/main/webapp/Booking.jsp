@@ -12,8 +12,11 @@
 	crossorigin="anonymous">
 	
 <title>Booking </title>
+
 </head>
 <body>
+<%@ include file="header.jsp" %>  
+
 <nav class="navbar navbar-expand-md navbar-light">
 		<div>
 			<a class="navbar-brand"> Booking Application </a>
