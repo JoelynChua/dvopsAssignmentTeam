@@ -40,7 +40,7 @@ cvCode
 date
 phone
 location 
-(will make a bookingId once he wakes up)
+
 #
 Author: Joelyn Chua
 DB name: ecommerce
