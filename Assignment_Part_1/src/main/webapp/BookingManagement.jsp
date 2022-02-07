@@ -9,12 +9,12 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 <meta charset="ISO-8859-1">
-<title>List of all Bookings</title>
+<title>List of all Booking</title>
 </head>
 <body>
 	<div class="row">
 		<div class="container">
-			<h3 class="text-center">List of Bookings</h3>
+			<h3 class="text-center">List of Booking</h3>
 			<hr>
 			<div class="container text-left">
 				<!-- Add new booking button redirects to the booking.jsp page -->
