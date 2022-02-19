@@ -80,7 +80,7 @@
 
 						<tr>
 							<td align="right"><br/> 
-							<input type="submit" value="Create" /></td>
+							<input type="submit" value="Create" name = "createListing" /></td>
 						</tr>
 
 					</table>
