@@ -102,7 +102,7 @@ public class ListingServlet extends HttpServlet {
 	
 	//Retrieve Listing
 	//Step 5: viewAllListing function to connect to the database and retrieve all users records
-	private void viewAllListing(HttpServletRequest request, HttpServletResponse response)
+	public void viewAllListing(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 		List<Listing> listings = new ArrayList<>();
 		try (Connection connection = getConnection();
@@ -135,7 +135,7 @@ public class ListingServlet extends HttpServlet {
 	
 	//Retrieve listing details
 	//method to get parameter, query database for existing user data and redirect to user edit page
-	private void showListingDetails(HttpServletRequest request, HttpServletResponse response)
+	public void showListingDetails(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
 		// get parameter passed in the URL
 		String listingId = request.getParameter("listingId");
@@ -145,7 +145,11 @@ public class ListingServlet extends HttpServlet {
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_LISTING_BY_ID);) {
 			    preparedStatement.setString(1, listingId);
-
+			    
+			    //for ListingServletTest
+			    String result = listingId;
+			    response.getWriter().write(result);
+			    
 			// Step 3: Execute the query or update query
 			ResultSet rs = preparedStatement.executeQuery();
 			
@@ -170,7 +174,7 @@ public class ListingServlet extends HttpServlet {
 	}
 	
 	//edit form
-	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
+	public void showEditForm(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
 		// get parameter passed in the URL
 		String listingId = request.getParameter("listingId");
@@ -181,6 +185,10 @@ public class ListingServlet extends HttpServlet {
 				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_LISTING_BY_ID);) {
 			    preparedStatement.setString(1, listingId);
 
+			    //for ListingServletTest
+			    String editresult = listingId;
+			    response.getWriter().write(editresult);
+			    
 			// Step 3: Execute the query or update query
 			ResultSet rs = preparedStatement.executeQuery();
 			
@@ -205,7 +213,7 @@ public class ListingServlet extends HttpServlet {
 	}
 	
 	//Update listing
-	private void updateListing(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+	public void updateListing(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 		// Step 1: Retrieve value from the request
 		//String oriId = request.getParameter("oriId");
 		//String oriListingName = request.getParameter("oriListingName");
@@ -242,7 +250,7 @@ public class ListingServlet extends HttpServlet {
 	}
 	
 	//delete
-	private void deleteListing(HttpServletRequest request, HttpServletResponse response)
+	public void deleteListing(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException {
 			//Step 1: Retrieve value from the request
 		    String listingId = request.getParameter("listingId");;
@@ -259,7 +267,7 @@ public class ListingServlet extends HttpServlet {
 	
 	 //sort Listing
 	//Step 5: viewAllListing function to connect to the database and retrieve all users records
-	private void listingPriceSorted(HttpServletRequest request, HttpServletResponse response)
+	public void listingPriceSorted(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 		List<Listing> listings = new ArrayList<>();
 		try (Connection connection = getConnection();

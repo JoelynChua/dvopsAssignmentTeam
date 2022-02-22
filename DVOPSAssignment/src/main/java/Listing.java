@@ -1,4 +1,3 @@
-
 public class Listing {
 	 public Listing(String listingId, String listingName, String listingPrice, String listingCountry,
 			String listingRemarks, String listingImage, String userId) {
@@ -60,5 +59,8 @@ public class Listing {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
+	
+	
+
 
 }
