@@ -3,7 +3,8 @@
 Working CRUD for reviews.
 
 Basic environment setup:
-Tomcat Server port is 8080,
+Tomcat Server port is 8090,
+Jenkins Server port is 8080,
 phpMyAdmin port is 3306.
 everyone is using database named ecommerce.
 
