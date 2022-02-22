@@ -10,7 +10,7 @@
 			<li class="nav-item"><a class="nav-link"
 				href="<%=request.getContextPath()%>/ListingServlet/viewListings">
 					Listings</a></li>
-			<li class="nav-item"><a class="nav-link"
+			<li class="nav-item"><a class="nav-link" id="ToReviews"
 				href="<%=request.getContextPath()%>/ReviewServlet/dashboard">
 					Reviews</a></li>
 			<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/BookingManagementServlet/dashboard">

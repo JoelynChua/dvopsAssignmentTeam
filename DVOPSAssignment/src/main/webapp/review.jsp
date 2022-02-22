@@ -20,14 +20,14 @@
 				class="nav-link">Back to Dashboard</a></li>
 		</ul>
 	</nav>
-	<div class="container col-md-6">
+	<div class="container col-md-6" id="reviewcontent" role="reviewcontentinfo">
 		<div class="card">
-			<div class="card-body">
+			<div class="card-body" >
 <form action="AddReviewServlet" method="post"> 
 	UserID: <input type= "text" name="userID" value="${ user_id }" disabled><br>
-	Rating (1-5): <input type= "text" name="rating"><br>
-	Review: <input type= "text" name="review"><br>
-	<input type="submit" value="Add review"/>
+	Rating (1-5): <input type= "text" name="rating" id="rating"><br>
+	Review: <input type= "text" name="review" id="review"><br>
+	<input id="addnewreview" type="submit" value="Add review"/>
 </form>
 </div>
 		</div>

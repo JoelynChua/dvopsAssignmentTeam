@@ -16,7 +16,7 @@
 			<%@ include file="header.jsp" %>
 			<div class="container text-left">
 				<!-- Add new review button redirects to the register.jsp page -->
-				<a href="<%=request.getContextPath()%>/review.jsp"
+				<a href="<%=request.getContextPath()%>/review.jsp" id="AddReview"
 					class="btn btn-success">Add New Review</a>
 			</div>
 			<br>
