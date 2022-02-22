@@ -55,19 +55,22 @@ listingRemarks - text
 listingImage - varchar (2048)
 userId(FK) - int
 #
-Navigate link: 
-login page: http://localhost:8080/DVOPSAssignment/login
-register page: http://localhost:8080/DVOPSAssignment/
-profile page: http://localhost:8080/DVOPSAssignment/user -- ONLY CAN ACCESS WHEN THE USER LOGS IN.
 
-create listing: http://localhost:8080/DVOPSAssignment/createListing.jsp
-view listing: http://localhost:8080/DVOPSAssignment/ListingServlet/viewListings 
+Starting Home Page: http://localhost:8090/DVOPSAssignment
+
+Navigate link: 
+login page: http://localhost:8090/DVOPSAssignment/login
+register page: http://localhost:8090/DVOPSAssignment/
+profile page: http://localhost:8090/DVOPSAssignment/user -- ONLY CAN ACCESS WHEN THE USER LOGS IN.
+
+create listing: http://localhost:8090/DVOPSAssignment/createListing.jsp
+view listing: http://localhost:8090/DVOPSAssignment/ListingServlet/viewListings 
 (update, delete and sort listing can be navigate from view listing page)
 
-view bookings: http://localhost:8080/DVOPSAssignment/BookingManagementServlet/dashboard
-create booking: http://localhost:8080/DVOPSAssignment/Booking.jsp
+view bookings: http://localhost:8090/DVOPSAssignment/BookingManagementServlet/dashboard
+create booking: http://localhost:8090/DVOPSAssignment/Booking.jsp
 
-view reviews: http://localhost:8080/DVOPSAssignment/ReviewServlet/dashboard
-add review: http://localhost:8080/DVOPSAssignment/ReviewServlet/dashboard
+view reviews: http://localhost:8090/DVOPSAssignment/ReviewServlet/dashboard
+add review: http://localhost:8090/DVOPSAssignment/ReviewServlet/dashboard
 
 
