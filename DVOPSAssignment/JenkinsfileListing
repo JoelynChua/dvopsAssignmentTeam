@@ -1,0 +1,37 @@
+pipeline {
+    agent{
+      node {
+        label ''
+        customWorkspace 'C:/Users/joelyn chua/Documents/w - DVOPS/dvopsAssignmentp2_workspace'
+      }
+    }
+
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "maven 3.8.2"
+    }
+    
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                // Get some code from a GitHub repository
+                git branch: 'listingCRUD', url: 'https://github.com/JoelynChua/dvopsAssignmentTeam.git '
+                
+                // To run Maven on a Windows agent, use
+                 bat "mvn -f DVOPSAssignment/pom.xml clean install"
+            }
+           }
+            
+          stage('Deploy') {
+            steps {
+                deploy adapters: [tomcat9(credentialsId: '75f3bbe4-6bd6-4102-b5bf-afc275f14709', path: '', url: 'http://localhost:8090')], contextPath: 'DVOPSAssignment', war: '**/*.war'
+          }
+        }
+    }
+}
