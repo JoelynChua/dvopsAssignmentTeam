@@ -41,7 +41,7 @@ crossorigin="anonymous">
 
 
                 <div class="d-flex justify-content-center">
-                  <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Call Servlet">Login</button>
+                  <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Call Servlet" id="login">Login</button>
                 </div>
 
                 <p class="text-center text-muted mt-5 mb-0">Dont have an account? <a href="register" class="fw-bold text-body"><u>Register here</u></a></p>
