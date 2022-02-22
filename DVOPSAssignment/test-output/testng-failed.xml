@@ -6,8 +6,11 @@
       <class name="com.sddevops.DVOPSAssignment.NewTestListing">
         <methods>
           <include name="afterTest"/>
+          <include name="details"/>
+          <include name="createListing"/>
           <include name="beforeTest"/>
           <include name="checkLogin"/>
+          <include name="updateDeleteListing"/>
         </methods>
       </class> <!-- com.sddevops.DVOPSAssignment.NewTestListing -->
     </classes>
