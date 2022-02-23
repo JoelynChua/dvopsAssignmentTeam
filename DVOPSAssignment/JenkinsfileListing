@@ -9,6 +9,7 @@ pipeline {
     tools {
         // Install the Maven version configured as "M3" and add it to the path.
         maven "maven 3.8.2"
+        jdk "JDK 1.8"
     }
     
     stages {
@@ -27,11 +28,12 @@ pipeline {
                  bat "mvn -f DVOPSAssignment/pom.xml clean install"
             }
            }
+         }
             
-          stage('Deploy') {
-            steps {
-                deploy adapters: [tomcat9(credentialsId: '75f3bbe4-6bd6-4102-b5bf-afc275f14709', path: '', url: 'http://localhost:8090')], contextPath: 'DVOPSAssignment', war: '**/*.war'
-          }
-        }
+         
+        post{
+            success{
+                cd "C:\Users\joelyn chua\Downloads\apache-tomcat-9.0.58\apache-tomcat-9.0.58\bin" && ./shutdown.bat cd "C:\Users\joelyn chua\Downloads\apache-tomcat-9.0.58\apache-tomcat-9.0.58\bin" && ./startup.bat
+                deploy adapters: [tomcat9(credentialsId: '75f3bbe4-6bd6-4102-b5bf-afc275f14709', path: '', url: 'http://localhost:8090')], contextPath: 'DVOPSAssignment/', war: '**/*.war'
     }
 }
