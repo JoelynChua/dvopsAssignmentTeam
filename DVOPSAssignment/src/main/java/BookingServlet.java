@@ -67,7 +67,7 @@ public class BookingServlet extends HttpServlet {
 		 ps.setString(6, l);
 		//Step 6: perform the query on the database using the prepared statement
 		 int i = ps.executeUpdate();
-		//Step 7: check if the query had been successfully execute, return “You are successfully registered” via the response,
+		//Step 7: check if the query had been successfully execute, return You are successfully registered via the response,
 		 if (i > 0){
 		PrintWriter writer = response.getWriter();
 		writer.println("<h1>" + "You have successfully booked the desired item" +
