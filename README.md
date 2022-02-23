@@ -1,6 +1,5 @@
 # dvopsAssignmentTeam
 
-Working CRUD for reviews.
 
 Basic environment setup:
 Tomcat Server port is 8090,
