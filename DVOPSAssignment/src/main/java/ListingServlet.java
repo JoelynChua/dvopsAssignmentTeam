@@ -123,8 +123,7 @@ public class ListingServlet extends HttpServlet {
 				String userId = rs.getString("userId");
 				listings.add(new Listing(listingId, listingName, listingPrice, listingCountry, listingRemarks,
 						listingImage, userId));
-			}
-			preparedStatement.close();
+			}		
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
@@ -166,7 +165,6 @@ public class ListingServlet extends HttpServlet {
 				currentListing = new Listing(listingId, listingName, listingPrice, listingCountry,
 						listingRemarks, listingImage, userId);
 			}
-			preparedStatement.close();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
@@ -206,7 +204,6 @@ public class ListingServlet extends HttpServlet {
 				currentListing = new Listing(listingId, listingName, listingPrice, listingCountry,
 						listingRemarks, listingImage, userId);
 			}
-			preparedStatement.close();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
@@ -246,7 +243,6 @@ public class ListingServlet extends HttpServlet {
 					int i = statement.executeUpdate();
 					//System.out.println (statement);
 					//System.out.println (i);
-					statement.close();
 		}
 		// Step 3: redirect back to UserServlet (note: remember to change the url to your project name)
 		response.sendRedirect("http://localhost:8090/DVOPSAssignment/ListingServlet/viewListings");
@@ -262,7 +258,6 @@ public class ListingServlet extends HttpServlet {
 			connection.prepareStatement(DELETE_LISTING_SQL);) {
 			 statement.setString(1, listingId);
 			 int i = statement.executeUpdate();
-			 statement.close();
 			 }
 			 //Step 3: redirect back to UserServlet dashboard (note: remember to change the url to your project name)
 			 response.sendRedirect("http://localhost:8090/DVOPSAssignment/ListingServlet/viewListings");
@@ -293,7 +288,6 @@ public class ListingServlet extends HttpServlet {
 				listings.add(new Listing(listingId, listingName, listingPrice, listingCountry, listingRemarks,
 						listingImage, userId));
 			}
-			preparedStatement.close();
 			//System.out.println("Function");
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
