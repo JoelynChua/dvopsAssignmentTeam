@@ -25,10 +25,24 @@ pipeline {
                 git branch: 'listingCRUD', url: 'https://github.com/JoelynChua/dvopsAssignmentTeam.git '
                 
                 // To run Maven on a Windows agent, use
-                 bat "mvn -f DVOPSAssignment/pom.xml clean install"
+                 bat "mvn -f DVOPSAssignment/pom.xml clean install -DskipTests"
             }
            }
+           
+        stage('Deploy'){
+            steps {
+                deploy adapters: [tomcat9(credentialsId: '75f3bbe4-6bd6-4102-b5bf-afc275f14709', path: '', url: 'http://localhost:8090')], contextPath: 'DVOPSAssignment', onFailure: false, war: '**/*.war'
+               
+            }
          }
+           
+        stage('Test'){
+            steps {
+                bat "mvn -f DVOPSAssignment/pom.xml test"
+               
+            }
+         }
+    }
             
          
         post{
