@@ -85,7 +85,7 @@ public class LoginServlet extends HttpServlet {
 				Integer get_userId = (Integer) session.getAttribute("user_id");	
 				System.out.println(get_userId);
 				
-				response.sendRedirect("http://localhost:8080/DVOPSAssignment/user");
+				response.sendRedirect("http://localhost:8090/DVOPSAssignment/user");
 				
 			}
 			else {
