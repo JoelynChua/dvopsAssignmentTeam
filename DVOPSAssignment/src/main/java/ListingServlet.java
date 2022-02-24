@@ -244,6 +244,11 @@ public class ListingServlet extends HttpServlet {
 					//System.out.println (statement);
 					//System.out.println (i);
 		}
+		
+		//for ListingServletTest
+	    String updateSuccessMsg = "Update success!";
+	    response.getWriter().write(updateSuccessMsg);
+	    
 		// Step 3: redirect back to UserServlet (note: remember to change the url to your project name)
 		response.sendRedirect("http://localhost:8090/DVOPSAssignment/ListingServlet/viewListings");
 	}
@@ -259,6 +264,10 @@ public class ListingServlet extends HttpServlet {
 			 statement.setString(1, listingId);
 			 int i = statement.executeUpdate();
 			 }
+			 
+			 //for ListingServletTest
+			 String deleteSuccessMsg = "Delete success!";
+			 response.getWriter().write(deleteSuccessMsg);
 			 //Step 3: redirect back to UserServlet dashboard (note: remember to change the url to your project name)
 			 response.sendRedirect("http://localhost:8090/DVOPSAssignment/ListingServlet/viewListings");
 			}
