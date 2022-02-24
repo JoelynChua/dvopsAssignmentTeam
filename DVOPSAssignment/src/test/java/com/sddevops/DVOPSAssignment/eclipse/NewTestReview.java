@@ -1,9 +1,13 @@
 package com.sddevops.DVOPSAssignment.eclipse;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 //import necessary Selenium WebDriver classes
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.Assert;
@@ -18,12 +22,17 @@ public class NewTestReview {
 	  
 	  WebDriver wd = new ChromeDriver();
 	  //Load website as a new page
+	  wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	  
 	  wd.navigate().to("http://localhost:8090/DVOPSAssignment");
+	  WebDriverWait wait = new WebDriverWait(wd, 20);
+	  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login")));   
+	  
 	  wd.findElement(By.id("login")).click();
 	  
 	  //Login Page
-	  wd.findElement(By.id("username")).sendKeys("user");
+	  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login")));   
+	  wd.findElement(By.id("username")).sendKeys("test");
 	  wd.findElement(By.id("form3Example4cg")).sendKeys("password");
 	  wd.findElement(By.id("login")).click();
 	  
