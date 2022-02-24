@@ -262,31 +262,56 @@ class ListingServletTest extends Mockito {
 	/**
 	 * Test method for {@link ListingServlet#updateListing(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)}.
 	 */
-//	@Test
-//	void testUpdateListing() throws SQLException, IOException, ServletException {
-//		//fail("Not yet implemented");
-//		
-//		// Step 1 - create the mock object
-//		HttpServletRequest req = mock(HttpServletRequest.class);
-//		HttpServletResponse resp = mock(HttpServletResponse.class);
-//		
-//		//Act - invoke the mtd being tested ViewAllListing()
-//		ListingServlet listingServlet = new ListingServlet();
-//		listingServlet.updateListing(req, resp);
-//		
-//		//LC.update(L2.getListingId(), L2.getListingName());
-//		 
-//        //assertNotNull(employeeName);
-//        //assertEquals("Dhwani Kashyap", employeeName);
-//	}
+	@Test
+	void testUpdateListing() throws SQLException, IOException, ServletException {
+		//fail("Not yet implemented");
+		
+		// Step 1 - create the mock object
+		HttpServletRequest req = mock(HttpServletRequest.class);
+		HttpServletResponse resp = mock(HttpServletResponse.class);
+		
+		StringWriter sw = new StringWriter();
+		PrintWriter pw = new PrintWriter(sw);
+		
+		when(resp.getWriter()).thenReturn(pw);
+		
+		//Act - invoke the mtd being tested ViewAllListing()
+		ListingServlet listingServlet = new ListingServlet();
+		listingServlet.updateListing(req, resp);
+		
+		
+		String updateSuccessMsg = sw.getBuffer().toString().trim();
+		assertEquals(updateSuccessMsg, "Update success!");
+		
+		//LC.update(L2.getListingId(), L2.getListingName());
+		 
+        //assertNotNull(employeeName);
+        //assertEquals("Dhwani Kashyap", employeeName);
+	}
 
 	/**
 	 * Test method for {@link ListingServlet#deleteListing(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)}.
 	 */
-//	@Test
-//	void testDeleteListing() {
-//		fail("Not yet implemented");
-//	}
+	@Test
+	void testDeleteListing() throws SQLException, IOException, ServletException{
+		//fail("Not yet implemented");
+		
+		// Step 1 - create the mock object
+		HttpServletRequest req = mock(HttpServletRequest.class);
+		HttpServletResponse resp = mock(HttpServletResponse.class);
+		
+		StringWriter sw = new StringWriter();
+		PrintWriter pw = new PrintWriter(sw);
+		
+		when(resp.getWriter()).thenReturn(pw);
+		
+		//Act - invoke the mtd being tested ViewAllListing()
+		ListingServlet listingServlet = new ListingServlet();
+		listingServlet.deleteListing(req, resp);
+				
+		String deleteSuccessMsg = sw.getBuffer().toString().trim();
+		assertEquals(deleteSuccessMsg, "Delete success!");
+	}
 //
 //	/**
 //	 * Test method for {@link ListingServlet#listingPriceSorted(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)}.

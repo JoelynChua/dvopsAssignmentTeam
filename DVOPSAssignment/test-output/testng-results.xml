@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-02-23T05:08:54 SGT" name="Default suite" finished-at="2022-02-23T05:09:00 SGT" duration-ms="6804">
+  <suite started-at="2022-02-25T01:39:34 SGT" name="Default suite" finished-at="2022-02-25T01:39:44 SGT" duration-ms="9179">
     <groups>
     </groups>
-    <test started-at="2022-02-23T05:08:54 SGT" name="Default test" finished-at="2022-02-23T05:09:00 SGT" duration-ms="6804">
+    <test started-at="2022-02-25T01:39:34 SGT" name="Default test" finished-at="2022-02-25T01:39:44 SGT" duration-ms="9179">
       <class name="com.sddevops.DVOPSAssignment.NewTestListing">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.sddevops.DVOPSAssignment.NewTestListing@40cb8df7]" started-at="2022-02-23T05:08:54 SGT" name="beforeTest" finished-at="2022-02-23T05:08:55 SGT" duration-ms="1081" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.sddevops.DVOPSAssignment.NewTestListing@40cb8df7]" started-at="2022-02-25T01:39:34 SGT" name="beforeTest" finished-at="2022-02-25T01:39:36 SGT" duration-ms="1706" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="checkLogin()[pri:0, instance:com.sddevops.DVOPSAssignment.NewTestListing@40cb8df7]" started-at="2022-02-23T05:08:55 SGT" name="checkLogin" finished-at="2022-02-23T05:08:57 SGT" duration-ms="2443" status="PASS">
+        <test-method signature="checkLogin()[pri:0, instance:com.sddevops.DVOPSAssignment.NewTestListing@40cb8df7]" started-at="2022-02-25T01:39:36 SGT" name="checkLogin" finished-at="2022-02-25T01:39:39 SGT" duration-ms="3084" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkLogin -->
-        <test-method signature="createListing()[pri:0, instance:com.sddevops.DVOPSAssignment.NewTestListing@40cb8df7]" started-at="2022-02-23T05:08:57 SGT" name="createListing" finished-at="2022-02-23T05:08:58 SGT" duration-ms="461" status="PASS">
+        <test-method signature="createListing()[pri:0, instance:com.sddevops.DVOPSAssignment.NewTestListing@40cb8df7]" started-at="2022-02-25T01:39:39 SGT" name="createListing" finished-at="2022-02-25T01:39:40 SGT" duration-ms="781" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createListing -->
-        <test-method signature="details()[pri:0, instance:com.sddevops.DVOPSAssignment.NewTestListing@40cb8df7]" started-at="2022-02-23T05:08:58 SGT" name="details" finished-at="2022-02-23T05:09:00 SGT" duration-ms="2123" status="PASS">
+        <test-method signature="details()[pri:0, instance:com.sddevops.DVOPSAssignment.NewTestListing@40cb8df7]" started-at="2022-02-25T01:39:40 SGT" name="details" finished-at="2022-02-25T01:39:42 SGT" duration-ms="2261" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- details -->
-        <test-method signature="updateDeleteListing()[pri:0, instance:com.sddevops.DVOPSAssignment.NewTestListing@40cb8df7]" started-at="2022-02-23T05:09:00 SGT" name="updateDeleteListing" finished-at="2022-02-23T05:09:00 SGT" duration-ms="548" status="PASS">
+        <test-method signature="updateDeleteListing()[pri:0, instance:com.sddevops.DVOPSAssignment.NewTestListing@40cb8df7]" started-at="2022-02-25T01:39:42 SGT" name="updateDeleteListing" finished-at="2022-02-25T01:39:43 SGT" duration-ms="1137" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- updateDeleteListing -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.sddevops.DVOPSAssignment.NewTestListing@40cb8df7]" started-at="2022-02-23T05:09:00 SGT" name="afterTest" finished-at="2022-02-23T05:09:00 SGT" duration-ms="115" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.sddevops.DVOPSAssignment.NewTestListing@40cb8df7]" started-at="2022-02-25T01:39:43 SGT" name="afterTest" finished-at="2022-02-25T01:39:44 SGT" duration-ms="164" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
