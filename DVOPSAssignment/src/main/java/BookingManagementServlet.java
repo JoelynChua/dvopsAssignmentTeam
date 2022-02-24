@@ -176,7 +176,7 @@ public class BookingManagementServlet extends HttpServlet {
 	 int i = statement.executeUpdate();
 	 }
 	 //Step 3: redirect back to UserServlet (note: remember to change the url to your project name)
-	 response.sendRedirect("http://localhost:8080/DVOPSAssignment/BookingManagementServlet/dashboard");
+	 response.sendRedirect("http://localhost:8090/DVOPSAssignment/BookingManagementServlet/dashboard");
 	}
 	
 	
@@ -192,7 +192,7 @@ public class BookingManagementServlet extends HttpServlet {
 	 int i = statement.executeUpdate();
 	 }
 	 //Step 3: redirect back to UserServlet dashboard (note: remember to change the url to your project name)
-	 response.sendRedirect("http://localhost:8080/DVOPSAssignment/BookingManagementServlet/dashboard");
+	 response.sendRedirect("http://localhost:8090/DVOPSAssignment/BookingManagementServlet/dashboard");
 	}
 
 }

@@ -168,7 +168,7 @@ public class UserServlet extends HttpServlet {
 				statement.executeUpdate();
 				
 		}
-		response.sendRedirect("http://localhost:8080/DVOPSAssignment/user");
+		response.sendRedirect("http://localhost:8090/DVOPSAssignment/user");
 	
 		
 	}
@@ -179,7 +179,7 @@ public class UserServlet extends HttpServlet {
 		request.getSession().removeAttribute("user_id");
 		
 		System.out.println("doLogout");
-		response.sendRedirect("http://localhost:8080/DVOPSAssignment/login");
+		response.sendRedirect("http://localhost:8090/DVOPSAssignment/login");
 		
 	}
 	
