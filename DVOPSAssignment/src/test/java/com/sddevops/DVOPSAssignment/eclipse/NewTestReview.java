@@ -37,12 +37,15 @@ public class NewTestReview {
 	  wd.findElement(By.id("login")).click();
 	  
 	  //Profile Page after logging in
+	  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ToReviews")));  
 	  wd.findElement(By.id("ToReviews")).click();
 	  
 	  //In Reviews page find and click on "Add a Review"
+	  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("AddReviews")));  
 	  wd.findElement(By.id("AddReview")).click();
 	  
 	  //Insert review for testing
+	  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("addnewreview")));  
 	  wd.findElement(By.id("rating")).sendKeys("5");
 	  wd.findElement(By.id("review")).sendKeys("test review");
 	  wd.findElement(By.id("addnewreview")).click();
